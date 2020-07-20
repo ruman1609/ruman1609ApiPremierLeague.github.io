@@ -1,0 +1,56 @@
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 99999999999999;
+  /*
+    z-index ni buat dia bisa paling atas semakin besar nilainya dia jadi paling atas
+    jadi kasih 99999999999999 dia jadi paling atas dungs
+    dari ryan
+ */
+}
+#nyala{
+  cursor: pointer;
+}
+.judul-kartu{
+  font-size: 20pt !important;
+  font-weight: bold !important;
+}
+.judul-kartu-det{
+  font-size: 35pt !important;
+  font-weight: bold !important;
+}
+#body-content{
+  padding:15px;
+}
+.card-title{
+  margin-top: 0 !important;
+  color: black !important;
+}
+.gambar{
+  height: 100% !important;
+  width: 175px !important;
+  padding-top: 5px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.gambar-det{
+  height: 100% !important;
+  width: 60% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.link-table{
+  text-align: center !important;
+}
+
+@media screen and (max-width:800px) {
+  .card-title{
+    font-size: 20pt !important;
+  }
+  h4{
+    font-size: 15pt !important;
+  }
+  .brand-logo{
+    font-size: 12pt !important;
+  }
+}

@@ -1,5 +1,5 @@
 import {getStand, getTeam, getSaved, getSavedId} from "./data.js";  // karena dia satu folder mesti ada .
-import { saveFunc, deleteFunc, getAll, getById } from"./db.js";
+import { saveFunc, deleteFunc, getAll, getById, check } from"./db.js";
 
 window.addEventListener("load", ()=>{
   if("serviceWorker" in navigator){
@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function(){
   }else{
     save.innerHTML = `<i class="material-icons">save</i>`
     item = getTeam();
+    let ada;
+    check(urlP.get("id")).then(hasil=>{
+      if(hasil) save.style.display = "none";
+    });
     save.onclick = event=>{
       save.style.display = "none";
       item.then(tim=>{

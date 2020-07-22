@@ -7,13 +7,12 @@ const DB = idb.open("api-bola", 1, upDB => {
 });
 
 const check = (id)=>{
-  return new Promise((resolve, reject)=>{
-    DB.then(db=>{
-      const tr = db.transaction("teams", "readonly");
-      const st = tr.objectStore("teams");
-      return st.get(parseInt(id));
-    }).then(hasil=>resolve(hasil));
-  });
+  DB.then(db=>{
+    const tr = db.transaction("teams", "readonly");
+    const st = tr.objectStore("teams");
+    st.get(id);
+    return tr.complete;
+  })
 };
 
 const saveFunc = tim => {

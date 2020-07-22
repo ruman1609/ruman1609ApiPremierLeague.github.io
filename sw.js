@@ -16,7 +16,7 @@ workbox.precaching.precacheAndRoute([
   { url: "/js/idb.js", revision: "1" },
   { url: "/nav/nav.html", revision: "1" },
   { url: "https://fonts.googleapis.com/icon?family=Material+Icons", revision: "1" },
-]);
+], {ignoreURLParametersMatching: [/.*/]});
 
 workbox.routing.registerRoute(
   new RegExp("/pages/"),

@@ -16,7 +16,7 @@ workbox.precaching.precacheAndRoute([
   { url: "/js/idb.js", revision: "1" },
   { url: "/nav/nav.html", revision: "1" },
   { url: "https://fonts.googleapis.com/icon?family=Material+Icons", revision: "1" },
-]);
+], {ignoreUrlParametersMatching: [/.*/]});
 
 workbox.routing.registerRoute(
   new RegExp("/pages/"),
@@ -48,7 +48,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   /^https:\/\/api\.football\-data\.org\/v2\//,
-  workbox.strategies.cacheFirst({
+  workbox.strategies.staleWhileRevalidate({
     cacheName: "data"
   })
 )

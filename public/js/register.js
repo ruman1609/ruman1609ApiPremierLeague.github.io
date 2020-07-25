@@ -25,13 +25,13 @@ window.addEventListener("load", ()=>{
             userVisibleOnly: true,
             applicationServerKey: urlBase64ToUint8Array("BAEJNLNLiu4u300APGjF7JimnEwRg7f3M-9UBR3q_ONAhtUepoyKnyHC1CT_vjbPy9kt_O4j-EdWrkjt6vA38yk")
           }).then(subs=>{
-            // console.log("endpoint: ", subs.endpoint);
-            // console.log("p256dh key: ", btoa(String.fromCharCode.apply(
-            //   null, new Uint8Array(subs.getKey("p256dh"))
-            // )));
-            // console.log("auth key: ", btoa(String.fromCharCode.apply(
-            //   null, new Uint8Array(subs.getKey("auth"))
-            // )));
+            console.log("endpoint: ", subs.endpoint);
+            console.log("p256dh key: ", btoa(String.fromCharCode.apply(
+              null, new Uint8Array(subs.getKey("p256dh"))
+            )));
+            console.log("auth key: ", btoa(String.fromCharCode.apply(
+              null, new Uint8Array(subs.getKey("auth"))
+            )));
           }).catch(error=>console.log(error));
         });
       }
